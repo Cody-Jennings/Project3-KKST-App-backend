@@ -2,13 +2,11 @@ const express = require('express')
 require('dotenv').config()
 const mongoose = require('mongoose')
 const KKSTData = require('./models/infoModel')
-//const USERData = require('./models/userModel')
 const cors = require('cors')
 const db = mongoose.connection
 const translationsData = require('./utilities/data')
 const infosController = require('./controllers/infoController')
-//const usersData = require('./utilities/userdata')
-//const usersController = require('./controllers/userController')
+
 
 //Environmetal Variables
 const app = express()
@@ -31,14 +29,11 @@ app.use(cors())
 
 // Routes
 app.use('/KKST-App', infosController) // telling server.js to get the routes from controllers/infoController.js
-//app.use('/KKST-App', usersController)
 
 // Seeding the db
 app.get('/seed', async (req, res) => {
     await KKSTData.deleteMany({})
     await KKSTData.insertMany(translationsData)
-    // await USERData.deleteMany({})
-    // await USERData.insertMany(usersData)
 
     res.send('done!')
 })
