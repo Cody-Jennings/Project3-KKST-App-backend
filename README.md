@@ -65,12 +65,12 @@ This project is a hosted and deployed via Render. Render monitors this repositor
 "__v": 0
 }
 
-```js
+
  
 
 ## Installation Instructions
 
-**Step 1: Clone the repository**  
+Step 1: Clone the repository
 
 Run the following code in your terminal to download the code:  
 
